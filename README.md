@@ -1,11 +1,10 @@
 # Cordova Hot Code Push Plugin
+这个插件提供的功能来执行自动更新的基于web的内容在您的应用程序。基本上,所有存储在 Cordova 项目www的文件夹中可以使用这个插件更新。
 
-This plugin provides functionality to perform automatic updates of the web based content in your application. Basically, everything that is stored in `www` folder of your Cordova project can be updated using this plugin.
+当你发布你的应用程序商店,你在所有web内容:html文件、JavaScript代码、图片等等。有两种方法如何更新:
 
-When you publish your application on the store - you pack in it all your web content: html files, JavaScript code, images and so on. There are two ways how you can update it:
-
-1. Publish new version of the app on the store. But it takes time, especially with the App Store.
-2. Sacrifice the offline feature and load all the pages online. But as soon as Internet connection goes down - application won't work.
+1. 发布新版本的应用程序商店。但这需要时间,尤其是在App Store。
+2. 牺牲在线离线特性和负载的所有页面。但是当网络连接下降——应用程序不会工作。
 
 This plugin is intended to fix all that. When user starts the app for the first time - it copies all the web files onto the external storage. From this moment all pages are loaded from the external folder and not from the packed bundle. On every launch plugin connects to your server (with optional authentication, see fetchUpdate() below) and checks if the new version of web project is available for download. If so - it loads it on the device and installs on the next launch.
 
